@@ -17,3 +17,35 @@ for i in range(cantidad):
             print("Error, este estudiante ya existe")
         else:
             break
+    nombre = input(f"Ingrese el nombre del estudiante: ")
+    while True:
+        edad = int(input("Ingrese el edad del estudiante: "))
+        if edad > 0:
+            break
+        else:
+            print("Error, ingrese una edad valida")
+    carrera = input("Ingrese la carrera del estudiante: ")
+    print("¿Cuántos cursos recibirá el estudiante? ")
+    cant = int(input())
+    for j in range(cant):
+        print(f"Curso#{j + 1}")
+        while True:
+            clave = input("Ingrese la clave del curso: ")
+            if clave in estudiantes:
+                print("Error, este curso ya se ingresó")
+            else:
+                break
+        nota_tarea = int(input("Ingrese la nota de las tareas: "))
+        nota_parcial = int(input("Ingrese la nota del parcial: "))
+        nota_proyecto = int(input("Ingrese la nota del proyecto: "))
+    estudiantes[carnet] = {
+        "nombre": nombre,
+        "edad": edad,
+        "carrera": carrera,
+        "curso": {
+            "codigo": clave,
+            "NotaTarea": nota_tarea,
+            "NotaParcial": nota_parcial,
+            "NotaProyecto": nota_proyecto
+        }
+    }
